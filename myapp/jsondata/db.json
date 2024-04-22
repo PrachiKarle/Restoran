@@ -1,0 +1,48 @@
+{
+  "book": [
+    {
+      "name": "Karle",
+      "email": "abc@gmail.com",
+      "date": "2024-04-21",
+      "time": "15:17",
+      "num": "people1",
+      "req": "Pizza",
+      "id": 1
+    }
+  ],
+  "contact": [
+    {
+      "name": "Prachi",
+      "email": "abc@gmail.com",
+      "sub": "order",
+      "msg": "order not send",
+      "id": 1
+    }
+  ],
+  "account": [
+    {
+      "id": 1,
+      "username": "ABC",
+      "email": "abc@gmail.com",
+      "pass": "order@send"
+    },
+    {
+      "mail": "xyz@gmail.com",
+      "username": "xyz",
+      "pass": "ihcarp23@#",
+      "id": 2
+    },
+    {
+      "mail": "prachi@gmail.com",
+      "username": "Prachi",
+      "pass": "ihcarp23@",
+      "id": 3
+    },
+    {
+      "mail": "pqr@gmail.com",
+      "username": "PQR",
+      "pass": "pqr@23",
+      "id": 4
+    }
+  ]
+}
