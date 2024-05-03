@@ -56,6 +56,9 @@ const Navbar = () => {
                   CONTACT
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to='/account' className="nav-link">MY ACCOUNT</NavLink>
+              </li>
             </ul>
             <button className="btn btn_1 px-4 py-2 ">
               <NavLink

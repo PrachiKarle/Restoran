@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
-import axios from 'axios';
+import axios from "axios";
 
 class Contact extends React.Component {
   constructor() {
@@ -15,15 +15,21 @@ class Contact extends React.Component {
   render() {
     const saveForm = async (e) => {
       e.preventDefault();
-      alert("Message Send Sucessfully");
-      console.log(this.state);
-      await axios.post("http://localhost:3000/contact", this.state);
-      this.setState({
-        name: "",
-        email: "",
-        sub: "",
-        msg: "",
-      });
+      var flag = false;
+      var acc = await axios.get("http://localhost:3000/account");
+      for (let x of acc.data) {
+        if (x.Login == true) {
+          flag = true;
+          await axios.patch(`http://localhost:3000/account/${x.id}`, {
+            Contact: this.state,
+          });
+        }
+      }
+      if (!flag) {
+        alert("Sign in First");
+      } else {
+        alert("Message send Successfully");
+      }
     };
     return (
       <>
@@ -60,7 +66,14 @@ class Contact extends React.Component {
           <div className="col-12 m-0 mt-5 p-0">
             <div className="row m-0 p-0">
               <div className="col-md-6 col-12 m-0 p-3">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6000623.759652719!2d-75.770041!3d42.74622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1713777535023!5m2!1sen!2sbd" height="100%" width="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6000623.759652719!2d-75.770041!3d42.74622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1713777535023!5m2!1sen!2sbd"
+                  height="100%"
+                  width="100%"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
 
               <div className="col-md-6 col-12 m-0 p-0">

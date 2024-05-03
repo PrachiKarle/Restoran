@@ -16,19 +16,31 @@ class Book extends React.Component {
   }
 
   render() {
-    const saveBooking = async(e) => {
+    const saveBooking = async (e) => {
       e.preventDefault();
-      alert("Table Booking done successfully!!!");
-      console.log(this.state);
-      await Axios.post("http://localhost:3000/book",this.state)
-      this.setState({
-        name: "",
-        email: "",
-        date: "",
-        time: "",
-        num: "",
-        req: "",
-      });
+      var flag = false;
+      var acc = await Axios.get("http://localhost:3000/account");
+      for (let x of acc.data) {
+        if (x.Login == true) {
+          flag = true;
+          await Axios.patch(`http://localhost:3000/account/${x.id}`, {
+            Booking: this.state,
+          });
+          this.setState({
+            name: "",
+            email: "",
+            date: "",
+            time: "",
+            num: "",
+            req: "",
+          });
+        }
+      }
+      if (!flag) {
+        alert("Please Sign in First");
+      } else {
+        alert("Table Booking done successfully!!!");
+      }
     };
     return (
       <>

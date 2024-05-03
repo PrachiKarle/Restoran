@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import Heading from "./Heading";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./Navbar";
+
 
 const username = createContext();
 const Sign = () => {
@@ -13,20 +13,31 @@ const Sign = () => {
 
   const SignIn = async (e) => {
     e.preventDefault();
+    var flag=false;
     var acc = await axios.get("http://localhost:3000/account");
     for (let x of acc.data) {
       if (x.username == usernm && x.pass == pass) {
+        flag=true;
+        await axios.patch(`http://localhost:3000/account/${x.id}`, {
+          Login: true,
+        });
         alert("Successfully Logged In!!!");
         nav("/");
+        
       }
+      else{
+        await axios.patch(`http://localhost:3000/account/${x.id}`,{
+          Login:false
+        })
+      }
+    }
+    if(!flag){
+      alert("Invalid Login Details");
     }
   };
 
   return (
     <>
-      <username.Provider value={usernm}>
-        <Navbar />
-      </username.Provider>
       <Heading val="Sign in" />
 
       <div className="row m-0 p-5">
