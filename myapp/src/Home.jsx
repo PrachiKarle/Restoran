@@ -10,7 +10,7 @@ import Service from "./Service";
 const Home = () => {
   const nav=useNavigate();
   const goTo=()=>{
-    nav('/book')
+    nav('/book');
   }
   return (
     <>
