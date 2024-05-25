@@ -4,16 +4,28 @@
       "id": 1,
       "username": "ABC",
       "email": "abc@gmail.com",
-      "pass": "order@send",
-      "Login": true,
-      "Booking": {
-        "name": "ABC",
-        "email": "abc@gmail.com",
-        "date": "2024-05-01",
-        "time": "09:37",
-        "num": "people1",
-        "req": "Burger"
-      },
+      "pass": "abcOrder",
+      "Login": false,
+      "Booking": [
+        {
+          "date": "2024-05-26",
+          "time": "16:56",
+          "num": "2",
+          "req": "Chicken"
+        },
+        {
+          "date": "2024-05-26",
+          "time": "14:00",
+          "num": "2",
+          "req": "Bruger"
+        },
+        {
+          "date": "2024-05-26",
+          "time": "17:04",
+          "num": "2",
+          "req": "Paneer"
+        }
+      ],
       "Contact": []
     },
     {

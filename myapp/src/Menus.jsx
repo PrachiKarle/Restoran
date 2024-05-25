@@ -10,7 +10,7 @@ const Menus = (props) => {
           </div>
           <div className="col-9">
             <div className="d-flex justify-content-between" style={{borderBottom:"1px solid gray"}}>
-              <h4 className="fw-bold">Chicken Burger</h4>
+              <h4 className="fw-bold">Burger</h4>
               <h4 className="text-warning fw-bold">$115</h4>
             </div>
             <i className="fw-normal">

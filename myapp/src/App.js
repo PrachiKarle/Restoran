@@ -31,14 +31,14 @@ const App = () => {
             {/* contact */}
             <Route path="/contact" element={<Contact />} />
             {/* Account */}
-            <Route path='/account' element={<Account/>}/>
+            <Route path="/account" element={<Account />} />
             {/* fallback routing */}
             <Route path="*" element={<PageNotFound />} />
+            {/* sign up */}
+            <Route path="/Signup" element={<SignUp />} />
           </Route>
-           {/* sign in */}
-           <Route path="/sign" element={<Sign />} />
-           {/* sign up */}
-           <Route path="/Signup" element={<SignUp />} />
+          {/* sign in */}
+          <Route path="/sign" element={<Sign />} />
         </Routes>
       </Router>
     </>

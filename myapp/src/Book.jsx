@@ -6,8 +6,6 @@ class Book extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      email: "",
       date: "",
       time: "",
       num: "",
@@ -24,11 +22,9 @@ class Book extends React.Component {
         if (x.Login == true) {
           flag = true;
           await Axios.patch(`http://localhost:3000/account/${x.id}`, {
-            Booking: this.state,
+            Booking: [...x.Booking,this.state]
           });
           this.setState({
-            name: "",
-            email: "",
             date: "",
             time: "",
             num: "",
@@ -64,8 +60,6 @@ class Book extends React.Component {
                 <div className="col">
                   <input
                     type="text"
-                    value={this.state.name}
-                    onChange={(e) => this.setState({ name: e.target.value })}
                     className="form-control"
                     placeholder="Your Name"
                     required
@@ -74,8 +68,6 @@ class Book extends React.Component {
                 <div className="col">
                   <input
                     type="email"
-                    value={this.state.email}
-                    onChange={(e) => this.setState({ email: e.target.value })}
                     className="form-control"
                     placeholder="Your Email"
                     required
@@ -115,9 +107,9 @@ class Book extends React.Component {
                     onChange={(e) => this.setState({ num: e.target.value })}
                   >
                     <option value="0">No of People</option>
-                    <option value="people1">People 1</option>
-                    <option value="people2">People 2</option>
-                    <option value="people3">People 3</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                   </select>
                 </div>
               </div>
