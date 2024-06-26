@@ -17,7 +17,7 @@ const Home = () => {
       {/* hero section */}
       <div className="bg container-fluid m-0 p-0">
         <div className="bg1 row m-0 p-0">
-          <div className="col-lg-5 m-lg-5 m-0 col-12 p-5">
+          <div className="col-lg-5 m-lg-5 m-0 col-10 p-5">
             <h1 className="text-light display-4 fw-bold">
               Enjoy Our Delicious Meal
             </h1>
@@ -32,11 +32,11 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="col-md-5 col-12 m-0 p-5 d-lg-flex d-none">
+          <div className="col-md-5 col-10 m-0 p-5 d-flex">
             <img
-              src="images/10002.png"
+              src="images/first.jpg"
               className="img-fluid w-100"
-              style={{ height: "80%" }}
+              style={{ height: "90%",borderRadius:"50%" }}
               alt=""
             />
           </div>

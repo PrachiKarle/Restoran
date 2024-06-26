@@ -4,22 +4,82 @@ import "./App.css";
 import Menus from "./Menus";
 
 const menus = [
-  "images/10001.jpg",
-  "images/menu-2.jpg",
-  "images/menu-3.jpg",
-  "images/menu-4.jpg",
+  {
+    id:'1',
+    title:"Pan Cakes",
+    price:"$100",
+    img:"images/10002.jpeg",
+  },
+  {
+    id:'2',
+    title:"Sandwich",
+    price:"$150",
+    img:"images/10003.jpeg",
+  },
+  {
+    id:'3',
+    title:"Coeffe",
+    price:"$140",
+    img:"images/10004.jpg",
+  },
+  {
+    id:'4',
+    title:"Cheese wrap",
+    price:"$130",
+    img:"images/10005.jpg",
+  },
 ];
 const menus1 = [
-  "images/menu-5.jpg",
-  "images/menu-6.jpg",
-  "images/menu-7.jpg",
-  "images/menu-8.jpg",
+  {
+    id:'1',
+    title:"Rice",
+    price:"$90",
+    img:"images/12.webp",
+  },
+  {
+    id:'2',
+    title:"Spaghetti",
+    price:"$140",
+    img:"images/13.jpg",
+  },
+  {
+    id:'3',
+    title:"Pizza",
+    price:"$110",
+    img:"images/14.jpg",
+  },
+  {
+    id:'4',
+    title:"Salad",
+    price:"$120",
+    img:"images/15.jpeg",
+  },
 ];
 const menus2 = [
-  "images/menu-6.jpg",
-  "images/menu-3.jpg",
-  "images/menu-4.jpg",
-  "images/menu-7.jpg",
+  {
+    id:'1',
+    title:"Veg Biryani",
+    price:"$90",
+    img:"images/21.jpg",
+  },
+  {
+    id:'2',
+    title:"Saag Aloo",
+    price:"$140",
+    img:"images/22.jpeg",
+  },
+  {
+    id:'3',
+    title:"Panner",
+    price:"$110",
+    img:"images/23.webp",
+  },
+  {
+    id:'4',
+    title:"Chana Masala",
+    price:"$120",
+    img:"images/24.jpg",
+  },
 ];
 
 const Menu = () => {
@@ -110,7 +170,7 @@ const Menu = () => {
               ? menus.map((val) => {
                   return (
                     <>
-                      <Menus img={val} />
+                      <Menus img={val.img} name={val.title} price={val.price} />
                     </>
                   );
                 })
@@ -120,7 +180,7 @@ const Menu = () => {
               ? menus1.map((val) => {
                   return (
                     <>
-                      <Menus img={val} />
+                      <Menus img={val.img} name={val.title} price={val.price} />
                     </>
                   );
                 })
@@ -130,7 +190,7 @@ const Menu = () => {
               ? menus2.map((val) => {
                   return (
                     <>
-                      <Menus img={val} />
+                      <Menus img={val.img} name={val.title} price={val.price} />
                     </>
                   );
                 })

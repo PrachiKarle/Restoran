@@ -42,8 +42,33 @@
       "username": "Prachi",
       "pass": "ihcarp23@",
       "id": 3,
-      "Login": false,
-      "Booking": [],
+      "Login": true,
+      "Booking": [
+        {
+          "date": "2024-06-26",
+          "time": "15:02",
+          "num": "2",
+          "req": "Passta"
+        },
+        {
+          "date": "2024-06-26",
+          "time": "17:03",
+          "num": "1",
+          "req": "Bruger"
+        },
+        {
+          "date": "2024-06-27",
+          "time": "15:00",
+          "num": "1",
+          "req": "Salad"
+        },
+        {
+          "date": "2024-06-27",
+          "time": "10:00",
+          "num": "2",
+          "req": "Sandwich"
+        }
+      ],
       "Contact": []
     },
     {
