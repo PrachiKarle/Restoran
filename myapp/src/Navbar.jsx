@@ -1,22 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./App.css";
 import Fixed from "./Fixed";
-import axios from "axios";
 
 const Navbar = () => {
-  const [username,setUser]=useState('');
-  useEffect(()=>{
-     check();
-  });
-  const check=async()=>{
-    var acc=await axios.get('http://localhost:3000/account');
-    for(let x of acc.data){
-      if(x.Login){
-         setUser(x.username);
-      }
-    }
-  };
+  
   return (
     <>
       <nav>
@@ -69,10 +57,7 @@ const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink to="/sign" className="nav-link">
-                  SIGN IN /
-                  {
-                    (username)?<NavLink to='/account' className="text-decoration-none text-light">{username}</NavLink>:<b>Account</b>
-                  }
+                  SIGN IN
                 </NavLink>
               </li>
             </ul>

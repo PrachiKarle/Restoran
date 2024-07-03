@@ -34,8 +34,8 @@ const SignUp = () => {
 
   //mail & username validation
   const sign1 = async () => {
-    var account = await axios.get("http://localhost:3000/account");
-    for (let x of account.data) {
+    var acc = await axios.get("https://prachikarle.github.io/JSON/restoarn.json");
+    for (let x of acc.data.account) {
       if (x.email == mail) {
         setMailErr("Email already exists");
         return false;
@@ -52,15 +52,10 @@ const SignUp = () => {
   //signin function
   const signIn = async (e) => {
     e.preventDefault();
-    sign1().then((res) => setS(res));
 
     if (sign() && s) {
       alert("Account Created Successfully");
-      await axios.post("http://localhost:3000/account", {
-        mail: mail,
-        username:usernm,
-        pass: pass,
-      });
+      
       setUser('');
       setMail("");
       setPass("");

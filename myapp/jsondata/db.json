@@ -5,86 +5,21 @@
       "username": "ABC",
       "email": "abc@gmail.com",
       "pass": "abcOrder",
-      "Login": false,
-      "Booking": [
-        {
-          "date": "2024-05-26",
-          "time": "16:56",
-          "num": "2",
-          "req": "Chicken"
-        },
-        {
-          "date": "2024-05-26",
-          "time": "14:00",
-          "num": "2",
-          "req": "Bruger"
-        },
-        {
-          "date": "2024-05-26",
-          "time": "17:04",
-          "num": "2",
-          "req": "Paneer"
-        }
-      ],
-      "Contact": []
+      "Login": false
     },
     {
       "mail": "xyz@gmail.com",
       "username": "xyz",
       "pass": "ihcarp23@#",
       "id": 2,
-      "Login": false,
-      "Booking": [],
-      "Contact": []
-    },
-    {
-      "mail": "prachi@gmail.com",
-      "username": "Prachi",
-      "pass": "ihcarp23@",
-      "id": 3,
-      "Login": true,
-      "Booking": [
-        {
-          "date": "2024-06-26",
-          "time": "15:02",
-          "num": "2",
-          "req": "Passta"
-        },
-        {
-          "date": "2024-06-26",
-          "time": "17:03",
-          "num": "1",
-          "req": "Bruger"
-        },
-        {
-          "date": "2024-06-27",
-          "time": "15:00",
-          "num": "1",
-          "req": "Salad"
-        },
-        {
-          "date": "2024-06-27",
-          "time": "10:00",
-          "num": "2",
-          "req": "Sandwich"
-        },
-        {
-          "date": "2024-06-26",
-          "time": "18:06",
-          "num": "1",
-          "req": "Pizza"
-        }
-      ],
-      "Contact": []
+      "Login": false
     },
     {
       "mail": "pqr@gmail.com",
       "username": "PQR",
       "pass": "pqr@23",
       "id": 4,
-      "Login": false,
-      "Booking": [],
-      "Contact": []
+      "Login": false
     }
   ]
 }

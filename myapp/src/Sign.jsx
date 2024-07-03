@@ -7,35 +7,36 @@ import Navbar from "./Navbar";
 const Sign = () => {
   const [usernm, setUser] = useState("");
   const [pass, setPass] = useState("");
+  const [flag,setFlag]=useState("");
+  var flag1=false;
   const nav = useNavigate();
 
+  //sign in
   const SignIn = async (e) => {
     e.preventDefault();
-    var flag = false;
-    var acc = await axios.get("http://localhost:3000/account");
-    for (let x of acc.data) {
+    var acc = await axios.get(
+      "https://prachikarle.github.io/JSON/restoarn.json"
+    );
+    for (let x of acc.data.account) {
       if (x.username == usernm && x.pass == pass) {
-        flag = true;
-        await axios.patch(`http://localhost:3000/account/${x.id}`, {
-          Login: true,
-        });
+        setFlag(x.username);
+        flag1=true;
         alert("Successfully Logged In!!!");
         nav("/");
-      } 
-      else {
-        await axios.patch(`http://localhost:3000/account/${x.id}`, {
-          Login: false,
-        });
       }
     }
-    if (!flag) {
-      alert("Invalid Login Details");
+    if(!flag){
+      alert("Invalid username and Password");
+      setUser("");
+      setPass("");
+      setFlag("");
     }
+    
   };
 
   return (
     <>
-      <Navbar />
+    
       <Heading val="Sign in" />
 
       <div className="row m-0 p-5">
@@ -87,4 +88,3 @@ const Sign = () => {
 };
 
 export default Sign;
-

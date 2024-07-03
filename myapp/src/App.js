@@ -10,7 +10,6 @@ import Contact from "./Contact";
 import PageNotFound from "./PageNotFound";
 import Sign from "./Sign";
 import SignUp from "./SignUp";
-import Account from "./Account";
 
 const App = () => {
   return (
@@ -30,15 +29,14 @@ const App = () => {
             <Route path="/book" element={<Booking />} />
             {/* contact */}
             <Route path="/contact" element={<Contact />} />
-            {/* Account */}
-            <Route path="/account" element={<Account />} />
+
             {/* fallback routing */}
             <Route path="*" element={<PageNotFound />} />
             {/* sign up */}
             <Route path="/Signup" element={<SignUp />} />
+            {/* sign in */}
+            <Route path="/sign" element={<Sign />} />
           </Route>
-          {/* sign in */}
-          <Route path="/sign" element={<Sign />} />
         </Routes>
       </Router>
     </>

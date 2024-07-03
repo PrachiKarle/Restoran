@@ -1,34 +1,23 @@
 import React, { useState } from "react";
 import Heading from "./Heading";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-  const [subj,setSubj]=useState('');
-  const [msg,setMsg]=useState('');
+  //contact
+  const [subj, setSubj] = useState("");
+  const [msg, setMsg] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const nav = useNavigate();
 
-  const nav=useNavigate();
-
+  //save contact
   const saveForm = async (e) => {
     e.preventDefault();
-    var flag = false;
-    var acc = await axios.get("http://localhost:3000/account");
-    for (let x of acc.data) {
-      if (x.Login == true) {
-        flag = true;
-        await axios.patch(`http://localhost:3000/account/${x.id}`, {
-          Contact: [...x.Contact, {sub:subj,msg:msg}],
-        });
-      }
-    }
-    if (!flag) {
-      alert("Sign in First");
-      nav('/');
-    } else {
-      alert("Message send Successfully");
-      nav('/');
-    }
-    
+    setSubj("");
+    setMsg("");
+    setEmail('');
+    setName('');
+    nav("/");
   };
   return (
     <>
@@ -81,6 +70,8 @@ const Contact = () => {
                   <div className="col-6 m-0 p-2">
                     <input
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="form-control"
                       placeholder="Your Name"
                       required
@@ -89,6 +80,8 @@ const Contact = () => {
                   <div className="col-6 p-2">
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="form-control"
                       placeholder="Your Email"
                       required
@@ -101,7 +94,7 @@ const Contact = () => {
                       className="form-control"
                       placeholder="Subject"
                       value={subj}
-                      onChange={(e) => setSubj(e.target.value )}
+                      onChange={(e) => setSubj(e.target.value)}
                       required
                     />
                   </div>
