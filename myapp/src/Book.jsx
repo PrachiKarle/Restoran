@@ -4,27 +4,35 @@ import { useNavigate } from "react-router-dom";
 
 const Book = () => {
   //all booking details
-  const nav=useNavigate();
+  const nav = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setState1] = useState("");
   const [time, setState2] = useState("");
-  const [num,setState]=useState('');
-  const [req,setState3]=useState('');
+  const [num, setState] = useState("");
+  const [req, setState3] = useState("");
 
-//save Booking
+  //save Booking
   const saveBooking = (e) => {
     e.preventDefault();
     alert("Table Book successfully");
-    setName('');
-    setEmail('');
-    setState('');
-    setState1('');
-    setState2('');
-    setState3('');
-    nav('/');
+    const arr = {
+      name: name,
+      email: email,
+      date: date,
+      time: time,
+      num: num,
+      req: req,
+    };
+    console.log(arr);
+    setName("");
+    setEmail("");
+    setState("");
+    setState1("");
+    setState2("");
+    setState3("");
+    nav("/");
   };
-
 
   return (
     <>
@@ -92,7 +100,7 @@ const Book = () => {
                   className="form-control"
                   required
                   value={num}
-                  onChange={(e) =>setState(e.target.value )}
+                  onChange={(e) => setState(e.target.value)}
                 >
                   <option value="0">No of People</option>
                   <option value="1">1</option>
@@ -108,7 +116,7 @@ const Book = () => {
                   className="form-control"
                   id=""
                   value={req}
-                  onChange={(e) =>setState3( e.target.value)}
+                  onChange={(e) => setState3(e.target.value)}
                   placeholder="Special Request"
                   required
                 ></textarea>
