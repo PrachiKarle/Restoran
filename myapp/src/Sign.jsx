@@ -25,7 +25,7 @@ const Sign = () => {
         nav("/");
       }
     }
-    if(!flag){
+    if(!flag1){
       alert("Invalid username and Password");
       setUser("");
       setPass("");
@@ -41,7 +41,7 @@ const Sign = () => {
 
       <div className="row m-0 p-5">
         <div
-          className="col-lg-6 col-10 m-auto px-5 py-4 text-light fw-bold"
+          className="col-lg-6 col-md-8 col-12 m-auto px-md-5 py-md-4  p-3 text-light fw-bold"
           style={{ backgroundColor: "#fea116", borderRadius: "25px" }}
         >
           <form action="" onSubmit={(e) => SignIn(e)}>
